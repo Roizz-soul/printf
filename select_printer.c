@@ -13,19 +13,7 @@ printer_t select_printer(char format)
 		{'c', print_char},
 		{'s', print_string},
 		{'i', print_int},
-		{'u', print_unsigned_int},
-		{'d', print_double},
-		{'o', print_octal},
-		{'x', print_mini_hexa},
-		{'X', print_hexa},
-		{'b', print_binary},
-		{'R', print_rot13},
-		{'S', print_string},
-		{'p', print_mini_hexa},
-		{'r', print_reverse},
-		{'l', print_unsigned_int},
-		{'h', print_unsigned_int},
-		{'*', print_special} /* SPECIAL PRINT MUST BE AT LAST, DON'T MOVE IT!!*/
+		{'d', print_double},/* SPECIAL PRINT MUST BE AT LAST, DON'T MOVE IT!!*/
 	};
 
 	for (i = 0; i < formats; i++)
