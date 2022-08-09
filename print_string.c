@@ -9,16 +9,15 @@
  *
  * Return: String Length.
  */
-int print_string(va_list *params)
+int print_string(char *s)
 {
 	int length = 0;
-	char *str = va_arg(*params, char *);
 
-	if (str == NULL)
-		str = "(null)";
-	while (str[length] != '\0')
+	if (s == NULL)
+		s = "(null)";
+	while (s[length] != '\0')
 	{
-		_putchar(str[length]);
+		_putchar(s[length]);
 		length++;
 	}
 

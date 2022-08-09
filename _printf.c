@@ -10,8 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list params;
-	printer_t current_printer;
-	int i = 0, putchar_flag = 1, length = 0;
+	int i = 0, length = 0;
 
 	if ((format == NULL) || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -19,26 +18,34 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
-			if (putchar_flag)
-				length += _putchar(format[i]);
-			else
+		{
+			length += _putchar(format[i]);
+		}
+		else if (format[i] == '%' && format[i + 1] != '\0')
+		{
+			switch (format[i + 1])
 			{
-				current_printer = select_printer(format[i]);
-				if (current_printer.format != '*')
-					length += current_printer.func(&params);
-				else
-					length += _putchar('%') + _putchar(format[i]);
-				putchar_flag = 1;
+				case 'c':
+					length += _putchar(va_arg(params, int));
+					_putchar(va_arg(params, int));
+					break;
+				case 's':
+					length += print_string(va_arg(params, char *));
+					break;
+				case '%':
+					length += _putchar('%');
+					break;
+				case 'd':
+					length += print_double(va_arg(params, int));
+					break;
+				case 'i':
+					length += print_int(va_arg(params, int));
+					break;
+				default:
+					break;
 			}
-		else
-			if (putchar_flag)
-				putchar_flag = 0;
-			else
-			{
-				/* ToDO: Add condition for blanks */
-				length += _putchar(format[i]);
-				putchar_flag = 1;
-			}
+			i++;
+		}
 		i++;
 	}
 	va_end(params);

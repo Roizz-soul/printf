@@ -36,12 +36,12 @@ void repeat_d(unsigned int i)
  *
  * Return: On success 1.
  */
-int print_double(va_list *param)
+int print_double(int g)
 {
 	int i = 0, len = 0, negative = 0;
 	unsigned int limit;
 
-	i = va_arg(*param, int);
+	i = g;
 	if (i < 0)
 	{
 		_putchar('-');

@@ -15,15 +15,15 @@ typedef struct printer
 	int (*func)(va_list *);
 } printer_t;
 
-printer_t select_printer(char s);
+int select_printer(char s);
 int _putchar(char c);
 int _printf(const char *format, ...);
 
 int print_char(va_list *);
-int print_string(va_list *);
-int print_int(va_list *);
+int print_string(char *s);
+int print_int(int g);
 int print_unsigned_int(va_list *);
-int print_double(va_list *);
+int print_double(int g);
 int print_octal(va_list *);
 int print_hexa(va_list *);
 int print_mini_hexa(va_list *);
