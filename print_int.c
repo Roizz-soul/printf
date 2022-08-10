@@ -37,12 +37,12 @@ void repeat_i(unsigned int i)
  *
  * Return: On success 1.
  */
-int print_int(va_list *param)
+int print_int(int a)
 {
 	int i = 0, len = 0, negative = 0;
 	unsigned int limit;
 
-	i = va_arg(*param, int);
+	i = a;
 	if (i < 0)
 	{
 		_putchar('-');

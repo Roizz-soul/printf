@@ -10,5 +10,6 @@ int _printf(const char *format, ...);
 int print_string(char *s);
 int print_int(int a);
 int print_binary(unsigned int a);
+int _putchar(char c);
 
 #endif
