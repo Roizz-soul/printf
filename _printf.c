@@ -41,6 +41,9 @@ int _printf(const char *format, ...)
 				case 'd':
 					len += print_int(va_arg(ap, int));
 					break;
+				case 'b':
+					len += print_binary(va_arg(ap, unsigned int));
+					break;
 				default:
 					break;
 			}
