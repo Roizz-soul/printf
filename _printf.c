@@ -44,6 +44,18 @@ int _printf(const char *format, ...)
 				case 'b':
 					len += print_binary(va_arg(ap, unsigned int));
 					break;
+				case 'u':
+					len += print_unsigned_int(va_arg(ap, unsigned int));
+					break;
+				case 'o':
+					len += print_octal(va_arg(ap, unsigned int));
+					break;
+				case 'x':
+					len += print_mini_hexa(va_arg(ap, unsigned int));
+					break;
+				case 'X':
+					len += print_hexa(va_arg(ap, unsigned int));
+					break;
 				default:
 					break;
 			}

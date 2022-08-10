@@ -11,5 +11,9 @@ int print_string(char *s);
 int print_int(int a);
 int print_binary(unsigned int a);
 int _putchar(char c);
+int print_unsigned_int(unsigned int a);
+int print_octal(unsigned int a);
+int print_mini_hexa(unsigned int a);
+int print_hexa(unsigned int a);
 
 #endif
