@@ -30,4 +30,4 @@ int print_hexa(unsigned int a)
 
 	length = print_base16(value, length) + negative + 1;
 	return (length);
-}i
+}
