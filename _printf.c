@@ -33,7 +33,6 @@ printed_chars++;
 else
 {
 print_buffer(buffer, &buff_ind);
-  
 flags = get_flags(format, &i);
 width = get_width(format, &i, list);
 precision = get_precision(format, &i, list);
